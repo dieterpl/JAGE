@@ -1,0 +1,4044 @@
+Instructions:
+- opcode: 0x00
+  cmd: NOP
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x01
+  cmd: LD
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - RegisterBC
+  - Value16
+
+- opcode: 0x02
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterBC
+  - RegisterA
+
+- opcode: 0x03
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterBC
+
+- opcode: 0x04
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+
+- opcode: 0x05
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+
+- opcode: 0x06
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+  - Value8
+
+- opcode: 0x07
+  cmd: RLCA
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x08
+  cmd: LD
+  instructionLength: 3
+  instructionCycles: 20
+  parameters:
+  - Address16
+  - RegisterSP
+
+- opcode: 0x09
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterHL
+  - RegisterBC
+
+- opcode: 0x0A
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterBC
+
+- opcode: 0x0B
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterBC
+
+- opcode: 0x0C
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+
+- opcode: 0x0D
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+
+- opcode: 0x0E
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+  - Value8
+
+- opcode: 0x0F
+  cmd: RRCA
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x10
+  cmd: STOP
+  instructionLength: 2
+  instructionCycles: 4
+
+- opcode: 0x11
+  cmd: LD
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - RegisterDE
+  - Value16
+
+- opcode: 0x12
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterDE
+  - RegisterA
+
+- opcode: 0x13
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterDE
+
+- opcode: 0x14
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+
+- opcode: 0x15
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+
+- opcode: 0x16
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+  - Value8
+
+- opcode: 0x17
+  cmd: RLA
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x18
+  cmd: JR
+  instructionLength: 2
+  instructionCycles: 12
+  parameters:
+  - Value8Signed
+
+- opcode: 0x19
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterHL
+  - RegisterDE
+
+- opcode: 0x1A
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterDE
+
+- opcode: 0x1B
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterDE
+
+- opcode: 0x1C
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+
+- opcode: 0x1D
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+
+- opcode: 0x1E
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+  - Value8
+
+- opcode: 0x1F
+  cmd: RRA
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x20
+  cmd: JRNZ
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Signed
+
+- opcode: 0x21
+  cmd: LD
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - RegisterHL
+  - Value16
+
+- opcode: 0x22
+  cmd: LDIL
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterA
+
+- opcode: 0x23
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterHL
+
+- opcode: 0x24
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+
+- opcode: 0x25
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+
+- opcode: 0x26
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+  - Value8
+
+- opcode: 0x27
+  cmd: DAA
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x28
+  cmd: JRZ
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Signed
+
+- opcode: 0x29
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterHL
+  - RegisterHL
+
+- opcode: 0x2A
+  cmd: LDIR
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterHL
+
+- opcode: 0x2B
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterHL
+
+- opcode: 0x2C
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+
+- opcode: 0x2D
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+
+- opcode: 0x2E
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+  - Value8
+
+- opcode: 0x2F
+  cmd: CPL
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x30
+  cmd: JRNC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Signed
+
+- opcode: 0x31
+  cmd: LD
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - RegisterSP
+  - Value16
+
+- opcode: 0x32
+  cmd: LDDL
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterA
+
+- opcode: 0x33
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterSP
+
+- opcode: 0x34
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 12
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0x35
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 12
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0x36
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 12
+  parameters:
+  - AddressInRegisterHL
+  - Value8
+
+- opcode: 0x37
+  cmd: SCF
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x38
+  cmd: JRC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Signed
+
+- opcode: 0x39
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterHL
+  - RegisterSP
+
+- opcode: 0x3A
+  cmd: LDDR
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterHL
+
+- opcode: 0x3B
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterSP
+
+- opcode: 0x3C
+  cmd: INC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+
+- opcode: 0x3D
+  cmd: DEC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+
+- opcode: 0x3E
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - Value8
+
+- opcode: 0x3F
+  cmd: CCF
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x40
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+  - RegisterB
+
+- opcode: 0x41
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+  - RegisterC
+
+- opcode: 0x42
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+  - RegisterD
+
+- opcode: 0x43
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+  - RegisterE
+
+- opcode: 0x44
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+  - RegisterH
+
+- opcode: 0x45
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+  - RegisterL
+
+- opcode: 0x46
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+  - AddressInRegisterHL
+
+- opcode: 0x47
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+  - RegisterA
+
+- opcode: 0x48
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+  - RegisterB
+
+- opcode: 0x49
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+  - RegisterC
+
+- opcode: 0x4A
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+  - RegisterD
+
+- opcode: 0x4B
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+  - RegisterE
+
+- opcode: 0x4C
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+  - RegisterH
+
+- opcode: 0x4D
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+  - RegisterL
+
+- opcode: 0x4E
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+  - AddressInRegisterHL
+
+- opcode: 0x4F
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+  - RegisterA
+
+- opcode: 0x50
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+  - RegisterB
+
+- opcode: 0x51
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+  - RegisterC
+
+- opcode: 0x52
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+  - RegisterD
+
+- opcode: 0x53
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+  - RegisterE
+
+- opcode: 0x54
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+  - RegisterH
+
+- opcode: 0x55
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+  - RegisterL
+
+- opcode: 0x56
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+  - AddressInRegisterHL
+
+- opcode: 0x57
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+  - RegisterA
+
+- opcode: 0x58
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+  - RegisterB
+
+- opcode: 0x59
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+  - RegisterC
+
+- opcode: 0x5A
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+  - RegisterD
+
+- opcode: 0x5B
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+  - RegisterE
+
+- opcode: 0x5C
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+  - RegisterH
+
+- opcode: 0x5D
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+  - RegisterL
+
+- opcode: 0x5E
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+  - AddressInRegisterHL
+
+- opcode: 0x5F
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+  - RegisterA
+
+- opcode: 0x60
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+  - RegisterB
+
+- opcode: 0x61
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+  - RegisterC
+
+- opcode: 0x62
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+  - RegisterD
+
+- opcode: 0x63
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+  - RegisterE
+
+- opcode: 0x64
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+  - RegisterH
+
+- opcode: 0x65
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+  - RegisterL
+
+- opcode: 0x66
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+  - AddressInRegisterHL
+
+- opcode: 0x67
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+  - RegisterA
+
+- opcode: 0x68
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+  - RegisterB
+
+- opcode: 0x69
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+  - RegisterC
+
+- opcode: 0x6A
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+  - RegisterD
+
+- opcode: 0x6B
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+  - RegisterE
+
+- opcode: 0x6C
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+  - RegisterH
+
+- opcode: 0x6D
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+  - RegisterL
+
+- opcode: 0x6E
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+  - AddressInRegisterHL
+
+- opcode: 0x6F
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+  - RegisterA
+
+- opcode: 0x70
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterB
+
+- opcode: 0x71
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterC
+
+- opcode: 0x72
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterD
+
+- opcode: 0x73
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterE
+
+- opcode: 0x74
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterH
+
+- opcode: 0x75
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterL
+
+- opcode: 0x76
+  cmd: HALT
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0x77
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+  - RegisterA
+
+- opcode: 0x78
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterB
+
+- opcode: 0x79
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterC
+
+- opcode: 0x7A
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterD
+
+- opcode: 0x7B
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterE
+
+- opcode: 0x7C
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterH
+
+- opcode: 0x7D
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterL
+
+- opcode: 0x7E
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterHL
+
+- opcode: 0x7F
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterA
+
+- opcode: 0x80
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterB
+
+- opcode: 0x81
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterC
+
+- opcode: 0x82
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterD
+
+- opcode: 0x83
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterE
+
+- opcode: 0x84
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterH
+
+- opcode: 0x85
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterL
+
+- opcode: 0x86
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterHL
+
+- opcode: 0x87
+  cmd: ADD
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterA
+
+- opcode: 0x88
+  cmd: ADC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterB
+
+- opcode: 0x89
+  cmd: ADC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterC
+
+- opcode: 0x8A
+  cmd: ADC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterD
+
+- opcode: 0x8B
+  cmd: ADC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterE
+
+- opcode: 0x8C
+  cmd: ADC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterH
+
+- opcode: 0x8D
+  cmd: ADC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterL
+
+- opcode: 0x8E
+  cmd: ADC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterHL
+
+- opcode: 0x8F
+  cmd: ADC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterA
+
+- opcode: 0x90
+  cmd: SUB
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterB
+
+- opcode: 0x91
+  cmd: SUB
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterC
+
+- opcode: 0x92
+  cmd: SUB
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterD
+
+- opcode: 0x93
+  cmd: SUB
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterE
+
+- opcode: 0x94
+  cmd: SUB
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterH
+
+- opcode: 0x95
+  cmd: SUB
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+
+- opcode: 0x96
+  cmd: SUB
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterHL
+
+- opcode: 0x97
+  cmd: SUB
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterA
+
+- opcode: 0x98
+  cmd: SBC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterB
+
+- opcode: 0x99
+  cmd: SBC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterC
+
+- opcode: 0x9A
+  cmd: SBC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterD
+
+- opcode: 0x9B
+  cmd: SBC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterE
+
+- opcode: 0x9C
+  cmd: SBC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterH
+
+- opcode: 0x9D
+  cmd: SBC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterL
+
+- opcode: 0x9E
+  cmd: SBC
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterHL
+
+- opcode: 0x9F
+  cmd: SBC
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+  - RegisterA
+
+- opcode: 0xA0
+  cmd: AND
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+
+- opcode: 0xA1
+  cmd: AND
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+
+- opcode: 0xA2
+  cmd: AND
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+
+- opcode: 0xA3
+  cmd: AND
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+
+- opcode: 0xA4
+  cmd: AND
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+
+- opcode: 0xA5
+  cmd: AND
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+
+- opcode: 0xA6
+  cmd: AND
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xA7
+  cmd: AND
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+
+- opcode: 0xA8
+  cmd: XOR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+
+- opcode: 0xA9
+  cmd: XOR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+
+- opcode: 0xAA
+  cmd: XOR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+
+- opcode: 0xAB
+  cmd: XOR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+
+- opcode: 0xAC
+  cmd: XOR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+
+- opcode: 0xAD
+  cmd: XOR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+
+- opcode: 0xAE
+  cmd: XOR
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xAF
+  cmd: XOR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+
+- opcode: 0xB0
+  cmd: OR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+
+- opcode: 0xB1
+  cmd: OR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+
+- opcode: 0xB2
+  cmd: OR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+
+- opcode: 0xB3
+  cmd: OR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+
+- opcode: 0xB4
+  cmd: OR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+
+- opcode: 0xB5
+  cmd: OR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+
+- opcode: 0xB6
+  cmd: OR
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xB7
+  cmd: OR
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+
+- opcode: 0xB8
+  cmd: CP
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterB
+
+- opcode: 0xB9
+  cmd: CP
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterC
+
+- opcode: 0xBA
+  cmd: CP
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterD
+
+- opcode: 0xBB
+  cmd: CP
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterE
+
+- opcode: 0xBC
+  cmd: CP
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterH
+
+- opcode: 0xBD
+  cmd: CP
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterL
+
+- opcode: 0xBE
+  cmd: CP
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xBF
+  cmd: CP
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - RegisterA
+
+- opcode: 0xC0
+  cmd: RETNZ
+  instructionLength: 1
+  instructionCycles: 8
+
+- opcode: 0xC1
+  cmd: POP
+  instructionLength: 1
+  instructionCycles: 12
+  parameters:
+  - RegisterBC
+
+- opcode: 0xC2
+  cmd: JPNZ
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - Value16
+
+- opcode: 0xC3
+  cmd: JP
+  instructionLength: 3
+  instructionCycles: 16
+  parameters:
+  - Value16
+
+- opcode: 0xC4
+  cmd: CALLNZ
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - Value16
+
+- opcode: 0xC5
+  cmd: PUSH
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - RegisterBC
+
+- opcode: 0xC6
+  cmd: ADD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - Value8
+
+- opcode: 0xC7
+  cmd: RST
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed00H
+
+- opcode: 0xC8
+  cmd: RETZ
+  instructionLength: 1
+  instructionCycles: 8
+
+- opcode: 0xC9
+  cmd: RET
+  instructionLength: 1
+  instructionCycles: 16
+
+- opcode: 0xCA
+  cmd: JPZ
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - Value16
+
+- opcode: 0xCC
+  cmd: CALLZ
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - Value16
+
+- opcode: 0xCD
+  cmd: CALL
+  instructionLength: 3
+  instructionCycles: 24
+  parameters:
+  - Value16
+
+- opcode: 0xCE
+  cmd: ADC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - Value8
+
+- opcode: 0xCF
+  cmd: RST
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed08H
+
+- opcode: 0xD0
+  cmd: RETNC
+  instructionLength: 1
+  instructionCycles: 8
+
+- opcode: 0xD1
+  cmd: POP
+  instructionLength: 1
+  instructionCycles: 12
+  parameters:
+  - RegisterDE
+
+- opcode: 0xD2
+  cmd: JPNC
+  instructionLength: 3
+  instructionCycles: 112
+  parameters:
+  - Value16
+
+- opcode: 0xD4
+  cmd: CALLNC
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - Value16
+
+- opcode: 0xD5
+  cmd: PUSH
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - RegisterDE
+
+- opcode: 0xD6
+  cmd: SUB
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8
+
+- opcode: 0xD7
+  cmd: RST
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed10H
+
+- opcode: 0xD8
+  cmd: RETC
+  instructionLength: 1
+  instructionCycles: 8
+
+- opcode: 0xD9
+  cmd: RETI
+  instructionLength: 1
+  instructionCycles: 16
+
+- opcode: 0xDA
+  cmd: JPC
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - Value16
+
+- opcode: 0xDC
+  cmd: CALLC
+  instructionLength: 3
+  instructionCycles: 12
+  parameters:
+  - Value16
+
+- opcode: 0xDE
+  cmd: SBC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - Value8
+
+- opcode: 0xDF
+  cmd: RST
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed18H
+
+- opcode: 0xE0
+  cmd: LDH
+  instructionLength: 2
+  instructionCycles: 12
+  parameters:
+  - Address8AndFixedOffset
+  - RegisterA
+
+- opcode: 0xE1
+  cmd: POP
+  instructionLength: 1
+  instructionCycles: 12
+  parameters:
+  - RegisterHL
+
+- opcode: 0xE2
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - AddressInRegisterCAndFixedOffset
+  - RegisterA
+
+- opcode: 0xE5
+  cmd: PUSH
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - RegisterHL
+
+- opcode: 0xE6
+  cmd: AND
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8
+
+- opcode: 0xE7
+  cmd: RST
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed20H
+
+- opcode: 0xE8
+  cmd: ADD
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - RegisterSP
+  - Value8Signed
+
+- opcode: 0xE9
+  cmd: JP
+  instructionLength: 1
+  instructionCycles: 4
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xEA
+  cmd: LD
+  instructionLength: 3
+  instructionCycles: 16
+  parameters:
+  - Address16
+  - RegisterA
+
+- opcode: 0xEE
+  cmd: XOR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8
+
+- opcode: 0xEF
+  cmd: RST
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed28H
+
+- opcode: 0xF0
+  cmd: LDH
+  instructionLength: 2
+  instructionCycles: 12
+  parameters:
+  - RegisterA
+  - Address8AndFixedOffset
+
+- opcode: 0xF1
+  cmd: POP
+  instructionLength: 1
+  instructionCycles: 12
+  parameters:
+  - RegisterAF
+
+- opcode: 0xF2
+  cmd: LD
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+  - AddressInRegisterCAndFixedOffset
+
+- opcode: 0xF3
+  cmd: DI
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0xF5
+  cmd: PUSH
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - RegisterAF
+
+- opcode: 0xF6
+  cmd: OR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8
+
+- opcode: 0xF7
+  cmd: RST
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed30H
+
+- opcode: 0xF8
+  cmd: LDHL
+  instructionLength: 2
+  instructionCycles: 12
+  parameters:
+  - RegisterSP
+  - Value8Signed
+
+- opcode: 0xF9
+  cmd: LD
+  instructionLength: 1
+  instructionCycles: 8
+  parameters:
+  - RegisterSP
+  - RegisterHL
+
+- opcode: 0xFA
+  cmd: LD
+  instructionLength: 3
+  instructionCycles: 16
+  parameters:
+  - RegisterA
+  - Address16
+
+- opcode: 0xFB
+  cmd: EI
+  instructionLength: 1
+  instructionCycles: 4
+
+- opcode: 0xFE
+  cmd: CP
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8
+
+- opcode: 0xFF
+  cmd: RST
+  instructionLength: 1
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed38H
+
+# CB Commands
+
+
+- opcode: 0xCB
+  subopcode: 0x00
+  cmd: RLC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x01
+  cmd: RLC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x02
+  cmd: RLC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x03
+  cmd: RLC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x04
+  cmd: RLC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x05
+  cmd: RLC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x06
+  cmd: RLC
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x07
+  cmd: RLC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x08
+  cmd: RRC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x09
+  cmd: RRC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x0A
+  cmd: RRC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x0B
+  cmd: RRC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x0C
+  cmd: RRC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x0D
+  cmd: RRC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x0E
+  cmd: RRC
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x0F
+  cmd: RRC
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x10
+  cmd: RL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x11
+  cmd: RL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x12
+  cmd: RL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x13
+  cmd: RL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x14
+  cmd: RL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x15
+  cmd: RL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x16
+  cmd: RL
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x17
+  cmd: RL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x18
+  cmd: RR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x19
+  cmd: RR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x1A
+  cmd: RR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x1B
+  cmd: RR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x1C
+  cmd: RR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x1D
+  cmd: RR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x1E
+  cmd: RR
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x1F
+  cmd: RR
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x20
+  cmd: SLA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x21
+  cmd: SLA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x22
+  cmd: SLA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x23
+  cmd: SLA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x24
+  cmd: SLA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x25
+  cmd: SLA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x26
+  cmd: SLA
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x27
+  cmd: SLA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x28
+  cmd: SRA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x29
+  cmd: SRA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x2A
+  cmd: SRA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x2B
+  cmd: SRA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x2C
+  cmd: SRA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x2D
+  cmd: SRA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x2E
+  cmd: SRA
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x2F
+  cmd: SRA
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x30
+  cmd: SWAP
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x31
+  cmd: SWAP
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x32
+  cmd: SWAP
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x33
+  cmd: SWAP
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x34
+  cmd: SWAP
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x35
+  cmd: SWAP
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x36
+  cmd: SWAP
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x37
+  cmd: SWAP
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x38
+  cmd: SRL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x39
+  cmd: SRL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x3A
+  cmd: SRL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x3B
+  cmd: SRL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x3C
+  cmd: SRL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x3D
+  cmd: SRL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x3E
+  cmd: SRL
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x3F
+  cmd: SRL
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x40
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x41
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x42
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x43
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x44
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x45
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x46
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed00H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x47
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x48
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x49
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x4A
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x4B
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x4C
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x4D
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x4E
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed02H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x4F
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x50
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x51
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x52
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x53
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x54
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x55
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x56
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed04H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x57
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x58
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x59
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x5A
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x5B
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x5C
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x5D
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x5E
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed08H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x5F
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x60
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x61
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x62
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x63
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x64
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x65
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x66
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed10H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x67
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x68
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x69
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x6A
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x6B
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x6C
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x6D
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x6E
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed20H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x6F
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x70
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x71
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x72
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x73
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x74
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x75
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x76
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed40H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x77
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x78
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x79
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x7A
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x7B
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x7C
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x7D
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x7E
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed80H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x7F
+  cmd: BIT
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x80
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x81
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x82
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x83
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x84
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x85
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x86
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed00H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x87
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x88
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x89
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x8A
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x8B
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x8C
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x8D
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x8E
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed02H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x8F
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x90
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x91
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x92
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x93
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x94
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x95
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x96
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed04H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x97
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0x98
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0x99
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0x9A
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0x9B
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0x9C
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0x9D
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0x9E
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed08H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0x9F
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xA0
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xA1
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xA2
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xA3
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xA4
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xA5
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xA6
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed10H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xA7
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xA8
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xA9
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xAA
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xAB
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xAC
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xAD
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xAE
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed20H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xAF
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xB0
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xB1
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xB2
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xB3
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xB4
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xB5
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xB6
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed40H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xB7
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xB8
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xB9
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xBA
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xBB
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xBC
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xBD
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xBE
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed80H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xBF
+  cmd: RES
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xC0
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xC1
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xC2
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xC3
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xC4
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xC5
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xC6
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed00H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xC7
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed00H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xC8
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xC9
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xCA
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xCB
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xCC
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xCD
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xCE
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed02H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xCF
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed02H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xD0
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xD1
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xD2
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xD3
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xD4
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xD5
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xD6
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed04H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xD7
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed04H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xD8
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xD9
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xDA
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xDB
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xDC
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xDD
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xDE
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed08H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xDF
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed08H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xE0
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xE1
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xE2
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xE3
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xE4
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xE5
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xE6
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed10H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xE7
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed10H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xE8
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xE9
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xEA
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xEB
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xEC
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xED
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xEE
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed20H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xEF
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed20H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xF0
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xF1
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xF2
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xF3
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xF4
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xF5
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xF6
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed40H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xF7
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed40H
+  - RegisterA
+
+- opcode: 0xCB
+  subopcode: 0xF8
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterB
+
+- opcode: 0xCB
+  subopcode: 0xF9
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterC
+
+- opcode: 0xCB
+  subopcode: 0xFA
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterD
+
+- opcode: 0xCB
+  subopcode: 0xFB
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterE
+
+- opcode: 0xCB
+  subopcode: 0xFC
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterH
+
+- opcode: 0xCB
+  subopcode: 0xFD
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterL
+
+- opcode: 0xCB
+  subopcode: 0xFE
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 16
+  parameters:
+  - Value8Fixed80H
+  - AddressInRegisterHL
+
+- opcode: 0xCB
+  subopcode: 0xFF
+  cmd: SET
+  instructionLength: 2
+  instructionCycles: 8
+  parameters:
+  - Value8Fixed80H
+  - RegisterA
