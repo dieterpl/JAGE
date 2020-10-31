@@ -1,14 +1,21 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
+
 package JAGE.cartridges;
 
 import JAGE.processor.Memory;
 import JAGE.utils.Utilities;
-
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * Validate game and for future more complex cartridges
+ */
 public class NormalCartridge {
 
     private byte[] data = null;

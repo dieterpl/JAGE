@@ -1,9 +1,16 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.supervisor;
 
 import JAGE.processor.Memory;
 import JAGE.utils.Utilities;
 import org.apache.log4j.Logger;
 
+/**
+ * Sets init value for registers and verifies games
+ */
 public class BIOSLoader {
     private static BIOSLoader biosLoader;
     private static Logger logger = Logger.getRootLogger();

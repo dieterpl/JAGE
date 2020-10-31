@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="144.0" prefWidth="160.0" xmlns="http://javafx.com/javafx/10.0.1"
-      fx:controller="JAGE.GUI.MainWindowController">
+      fx:controller="JAGE.GUI.MainView.MainViewController">
     <children>
         <MenuBar fx:id="menuBar">
             <menus>

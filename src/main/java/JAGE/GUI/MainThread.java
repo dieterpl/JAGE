@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.GUI;
 
 import JAGE.supervisor.Supervisor;

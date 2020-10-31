@@ -1,7 +1,7 @@
 package JAGE.GUI.SpriteView;
 
 import JAGE.GUI.Disassembler.DisassemblerWindow;
-import JAGE.GUI.MemoryView.MemoryView;
+import JAGE.GUI.MemoryView.MemoryViewWindow;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,7 +26,7 @@ public class SpriteViewController implements Initializable {
     }
 
     public void openMemoryView(ActionEvent actionEvent) throws IOException {
-        MemoryView dw = new MemoryView();
+        MemoryViewWindow dw = new MemoryViewWindow();
 
     }
 }

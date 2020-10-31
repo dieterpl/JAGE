@@ -1,8 +1,15 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor.interfaces;
 
 import JAGE.processor.Registers.RegisterF;
 import JAGE.utils.Utilities;
 
+/**
+ * 16 bit register extension of 8 bit register
+ */
 public abstract class Register16 extends Register {
 
 

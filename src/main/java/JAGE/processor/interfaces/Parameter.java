@@ -1,5 +1,13 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
+
 package JAGE.processor.interfaces;
 
+/**
+ * Interface containing a description for assembler command parameters
+ */
 public interface Parameter {
 
 

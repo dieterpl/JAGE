@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.GUI.MemoryView;
 
 import JAGE.utils.Utilities;
@@ -19,7 +23,7 @@ public class MemoryRow {
 
 
     public MemoryRow(int index, int off0, int off1, int off2, int off3, int off4, int off5, int off6, int off7) {
-        switch (MemoryView.encoding) {
+        switch (MemoryViewWindow.encoding) {
             case BINARY:
                 setOff0(Utilities.intToBitString(off0));
                 setOff1(Utilities.intToBitString(off1));

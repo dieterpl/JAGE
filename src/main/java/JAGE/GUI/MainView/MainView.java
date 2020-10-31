@@ -1,4 +1,8 @@
-package JAGE.GUI;
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
+package JAGE.GUI.MainView;
 
 import JAGE.display.FrameBuffer;
 import JAGE.display.GPU;
@@ -14,11 +18,14 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
-public class MainWindow extends Stage implements EventHandler<WindowEvent> {
+/**
+ * Main Window containing the display rendering the game
+ */
+public class MainView extends Stage implements EventHandler<WindowEvent> {
     Scene scene;
 
 
-    public MainWindow() throws IOException {
+    public MainView() throws IOException {
         this.setOnCloseRequest(this);
         Parent mainWindow = FXMLLoader.load(getClass().getClassLoader().getResource("mainWindow.fxml"));
         scene = new Scene(mainWindow);

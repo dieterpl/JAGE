@@ -1,12 +1,26 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.display;
 
 import JAGE.processor.Memory;
 import JAGE.utils.Utilities;
 import javafx.scene.paint.Color;
 
+/**
+ * Translate a memory position into tile data
+ */
 public class Tile {
 
 
+    /**
+     * Returns a background tile as 2D-Array
+     *
+     * @param location memory address
+     * @return 2D-Color array
+     * @throws Exception
+     */
     public static Color[][] getTile(int location) throws Exception {
         Color[][] tile = new Color[8][8];
         location = location * 0x10 + 0x8000;

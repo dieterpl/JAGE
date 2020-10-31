@@ -1,3 +1,5 @@
+#Copyright 2020 P. Dieterich
+#All rights reserved.
 Instructions:
 - opcode: 0x00
   cmd: NOP

@@ -1,5 +1,12 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.utils;
 
+/**
+ * Util functions for bit wise operation and conversion
+ */
 public class Utilities {
 
 

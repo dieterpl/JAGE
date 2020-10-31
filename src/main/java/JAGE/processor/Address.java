@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor;
 
 import JAGE.processor.Registers.RegisterBC;
@@ -7,6 +11,9 @@ import JAGE.processor.Registers.RegisterHL;
 import JAGE.processor.interfaces.Parameter;
 import JAGE.utils.Utilities;
 
+/**
+ * Address parameter for assembler commands
+ */
 public class Address implements Parameter {
 
     int value = 0;

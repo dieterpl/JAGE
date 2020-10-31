@@ -1,10 +1,16 @@
-// Copyright (C) P. Dieterich
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.GUI;
 
 import org.apache.log4j.xml.DOMConfigurator;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Main entry point for the emulator
+ */
 public class Main {
 
 
