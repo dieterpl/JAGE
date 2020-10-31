@@ -17,7 +17,9 @@ public class Main {
     public static void main(String[] args) throws Exception {
         DOMConfigurator.configureAndWatch("log4j.xml", 60 * 1000);
         // Core thread for calculating the Gameboy
-        Thread mainThread = new Thread(new MainThread());
+        MainThread mt = new MainThread();
+        mt.setArgs(args);
+        Thread mainThread = new Thread(mt);
         mainThread.start();
 
         // Thread for the interface
