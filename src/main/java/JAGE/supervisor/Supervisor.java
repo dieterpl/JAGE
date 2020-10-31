@@ -27,7 +27,7 @@ public class Supervisor {
     private static Supervisor supervisor;
     private static Logger logger = Logger.getRootLogger();
     String disassembly = "";
-
+    private String[] args;
 
     private Supervisor() {
     }
@@ -58,12 +58,16 @@ public class Supervisor {
         return disassembly;
     }
 
+    public void restartEmulator(){
+        startEmulator(this.args);
+    }
 
-    public void startEmulator() {
+    public void startEmulator(String[] args) {
+        this.args = args;
         try {
             logger.setLevel(Level.INFO);
-
-            NormalCartridge cartridge = new NormalCartridge("testRoms/cpu_instrs/individual/01-special.gb");
+            System.out.println("Starting: "+args[0]);
+            NormalCartridge cartridge = new NormalCartridge(args[0]);
 
             cartridge.loadCartridge();
             BIOSLoader.getInstance().setInitalValues();
