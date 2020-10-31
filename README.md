@@ -10,13 +10,11 @@ The goal of the project is NOT to make a very fast emulator, but to layout the i
 compliant with object oriented language paradigms of java. 
 For that reason the opcodes and corresponding instructions are stored in the 'instructions.yml' file. Which are then dynamically loaded to
 and executed. This approach enables the commands to be very general and clear. It also helps with debugging as it makes tracing the executed code straight forward.
-
---- 
+  
 
 In addition to the main window this emulator features debugging tools like a sprite view, a memory view and a disassembler.
 Although these are still very much work-in-progess.
-
--- 
+ 
 
 ## Progress
 
