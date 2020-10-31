@@ -176,6 +176,6 @@ public class DisassembleController implements Initializable {
 
 
     public void update(ActionEvent actionEvent) {
-        Supervisor.getInstance().startEmulator();
+        Supervisor.getInstance().restartEmulator();
     }
 }

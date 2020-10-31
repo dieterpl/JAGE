@@ -9,12 +9,17 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class MainThread extends Application implements Runnable {
+    private String[] args;
+
+    public void setArgs(String[] args){
+        this.args = args;
+    }
 
     @Override
     public void start(Stage stage) throws Exception {
     }
 
     public void run() {
-        Supervisor.getInstance().startEmulator();
+        Supervisor.getInstance().startEmulator(this.args);
     }
 }
