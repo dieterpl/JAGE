@@ -1,3 +1,8 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
+
 package JAGE.supervisor;
 
 
@@ -14,6 +19,9 @@ import JAGE.utils.Utilities;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
+/**
+ * Loades Assembly and Supervises execution
+ */
 public class Supervisor {
 
     private static Supervisor supervisor;

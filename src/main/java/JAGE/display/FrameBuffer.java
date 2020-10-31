@@ -1,8 +1,15 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
+
 package JAGE.display;
 
-import JAGE.processor.Memory;
 import javafx.scene.paint.Color;
 
+/**
+ * Holds a representation fo the screen data
+ */
 public class FrameBuffer {
 
     public static final int width = 256;
@@ -24,8 +31,6 @@ public class FrameBuffer {
         }
         return instance;
     }
-
-
 
     public void setPixel(int x, int y, Color color) throws Exception {
         if (x < 0 || x >= width || y < 0 || y >= height) {

@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor;
 
 import JAGE.processor.Registers.*;
@@ -13,6 +17,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Interprets raw values into instructions based on YML File
+ */
 public class Interpreter {
 
     private static Interpreter interpreter;
@@ -32,8 +39,8 @@ public class Interpreter {
     private void createInstructionDatabase() throws Exception {
         // Parse JSON
         String instructionsYAML = "";
-        String resource = "instructions.yaml"; // the "file name" without any package or directory
-        ClassLoader loader = this.getClass().getClassLoader(); // or YourClass.class.getClassLoader()
+        String resource = "instructions.yaml";
+        ClassLoader loader = this.getClass().getClassLoader();
         URL resourceUrl = loader.getResource(resource);
         if (resourceUrl != null) {
             try (InputStream input = resourceUrl.openStream()) {

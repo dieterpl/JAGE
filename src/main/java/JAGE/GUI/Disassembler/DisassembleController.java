@@ -1,8 +1,23 @@
+//See: https://github.com/FXMisc/RichTextFX/blob/master/richtextfx-demos/src/main/java/org/fxmisc/richtext/demo/JavaKeywordsDemo.java
+/*
+Copyright (c) 2013-2017, Tomas Mikula and contributors
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Modifications Copyright (c) 2020 P. Dieterich
+*/
+
 package JAGE.GUI.Disassembler;
 
-
 import JAGE.GUI.MemoryView.MemoryGUIInterface;
-import JAGE.GUI.RegisterConverter;
+import JAGE.GUI.GUITools.RegisterConverter;
 import JAGE.processor.Registers.*;
 import JAGE.supervisor.Supervisor;
 import javafx.concurrent.Task;
@@ -27,20 +42,16 @@ import java.util.concurrent.ExecutorService;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DisassemblerGUIController implements Initializable {
 
+public class DisassembleController implements Initializable {
+
+    /**
+     * Common syntax for language
+     */
     private static final String[] KEYWORDS = new String[]{
-            "abstract", "assert", "boolean", "break", "byte",
-            "case", "catch", "char", "class", "const",
-            "continue", "default", "do", "double", "else",
-            "enum", "extends", "final", "finally", "float",
-            "for", "goto", "if", "implements", "import",
-            "instanceof", "int", "interface", "long", "native",
-            "new", "package", "private", "protected", "public",
-            "return", "short", "static", "strictfp", "super",
-            "switch", "synchronized", "this", "throw", "throws",
-            "transient", "try", "void", "volatile", "while"
+            "NOP"
     };
+
     private static final String KEYWORD_PATTERN = "\\b(" + String.join("|", KEYWORDS) + ")\\b";
     private static final String PAREN_PATTERN = "\\(|\\)";
     private static final String BRACE_PATTERN = "\\{|\\}";
@@ -57,28 +68,7 @@ public class DisassemblerGUIController implements Initializable {
                     + "|(?<STRING>" + STRING_PATTERN + ")"
                     + "|(?<COMMENT>" + COMMENT_PATTERN + ")"
     );
-    private static final String sampleCode = String.join("\n", new String[]{
-            "package com.example;",
-            "",
-            "import java.util.*;",
-            "",
-            "public class Foo extends Bar implements Baz {",
-            "",
-            "    /*",
-            "     * multi-line comment",
-            "     */",
-            "    public static void main(String[] args) {",
-            "        // single-line comment",
-            "        for(String arg: args) {",
-            "            if(arg.length() != 0)",
-            "                System.out.println(arg);",
-            "            else",
-            "                System.err.println(\"Warning: empty string as argument\");",
-            "        }",
-            "    }",
-            "",
-            "}"
-    });
+
     @FXML
     public VBox vbox;
     @FXML
@@ -103,7 +93,7 @@ public class DisassemblerGUIController implements Initializable {
     @FXML
     private TableColumn<MemoryGUIInterface, String> ramValueHCol;
 
-    private static StyleSpans<Collection<String>> computeHighlighting(String text) {
+    private static StyleSpans<Collection<String>> computeSyntaxHighlighting(String text) {
         Matcher matcher = PATTERN.matcher(text);
         int lastKwEnd = 0;
         StyleSpansBuilder<Collection<String>> spansBuilder
@@ -127,19 +117,19 @@ public class DisassemblerGUIController implements Initializable {
         return spansBuilder.create();
     }
 
-    private Task<StyleSpans<Collection<String>>> computeHighlightingAsync() {
+    private Task<StyleSpans<Collection<String>>> computeSyntaxHighlightingAsync() {
         String text = codeArea.getText();
         Task<StyleSpans<Collection<String>>> task = new Task<StyleSpans<Collection<String>>>() {
             @Override
             protected StyleSpans<Collection<String>> call() throws Exception {
-                return computeHighlighting(text);
+                return computeSyntaxHighlighting(text);
             }
         };
         executor.execute(task);
         return task;
     }
 
-    private void applyHighlighting(StyleSpans<Collection<String>> highlighting) {
+    private void applySyntaxHighlighting(StyleSpans<Collection<String>> highlighting) {
         codeArea.setStyleSpans(0, highlighting);
     }
 
@@ -147,25 +137,12 @@ public class DisassemblerGUIController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         fillRegisterTable();
-        // add line numbers to the left of area
         codeArea.setParagraphGraphicFactory(LineNumberFactory.get(codeArea));
 
-        // recompute the syntax highlighting 500 ms after user stops editing area
-        Subscription cleanupWhenNoLongerNeedIt = codeArea
-
-                // plain changes = ignore style changes that are emitted when syntax highlighting is reapplied
-                // multi plain changes = save computation by not rerunning the code multiple times
-                //   when making multiple changes (e.g. renaming a method at multiple parts in file)
+        Subscription code = codeArea
                 .multiPlainChanges()
-
-                // do not emit an event until 500 ms have passed since the last emission of previous stream
                 .successionEnds(Duration.ofMillis(500))
-
-                // run the following code block when previous stream emits an event
-                .subscribe(ignore -> codeArea.setStyleSpans(0, computeHighlighting(codeArea.getText())));
-
-        // when no longer need syntax highlighting and wish to clean up memory leaks
-        // run: `cleanupWhenNoLongerNeedIt.unsubscribe();`
+                .subscribe(ignore -> codeArea.setStyleSpans(0, computeSyntaxHighlighting(codeArea.getText())));
 
         codeArea.replaceText(0, 0, Supervisor.getInstance().generateDissasembly());
 

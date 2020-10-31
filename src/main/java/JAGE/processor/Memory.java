@@ -1,8 +1,15 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor;
 
 
 import JAGE.utils.Utilities;
 
+/**
+ * Contains the memory of the emulator segmented into areas
+ */
 public class Memory {
 
     private static Memory singleton = null;

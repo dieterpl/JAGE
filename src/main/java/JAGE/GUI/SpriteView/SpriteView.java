@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.GUI.SpriteView;
 
 import JAGE.processor.Memory;
@@ -14,6 +18,9 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
+/**
+ * Sprite View to look at a graphical representation of the sprite memory
+ */
 public class SpriteView extends Stage implements EventHandler<WindowEvent> {
     Scene scene;
 

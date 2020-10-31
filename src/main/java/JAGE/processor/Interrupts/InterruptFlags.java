@@ -1,5 +1,12 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor.Interrupts;
 
+/**
+ * Holds interrupt tags
+ */
 public class InterruptFlags {
 
     private static InterruptFlags irf;

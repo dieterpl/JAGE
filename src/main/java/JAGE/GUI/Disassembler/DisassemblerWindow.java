@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.GUI.Disassembler;
 
 import javafx.event.EventHandler;
@@ -9,6 +13,9 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
+/**
+ * Disassembler Window to look at parsed code and step through the program.
+ */
 public class DisassemblerWindow extends Stage implements EventHandler<WindowEvent> {
     Scene scene;
 

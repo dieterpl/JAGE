@@ -1,8 +1,15 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor;
 
 import JAGE.processor.interfaces.Parameter;
 import JAGE.utils.Utilities;
 
+/**
+ * Value parameter for asm commands
+ */
 public class Value implements Parameter {
 
     Type type;

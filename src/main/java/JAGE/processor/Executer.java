@@ -1,3 +1,8 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
+
 package JAGE.processor;
 
 import JAGE.processor.Interrupts.InterruptFlags;
@@ -12,6 +17,9 @@ import org.apache.log4j.Logger;
 
 import static JAGE.utils.Utilities.*;
 
+/**
+ * Executes commands from interpreter, contains all asm commands
+ */
 public class Executer {
 
     private static Executer executer;

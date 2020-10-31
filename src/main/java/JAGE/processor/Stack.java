@@ -1,7 +1,14 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor;
 
 import JAGE.processor.Registers.RegisterSP;
 
+/**
+ * Modifies the stack pointer and writes the stack to memory
+ */
 public class Stack {
     private static Stack stack;
 

@@ -1,6 +1,11 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.GUI.Disassembler;
 
 import javafx.beans.property.SimpleStringProperty;
+
 
 public class DisassemblerTableGUI implements DisassemblerTableGUIInterface {
     @Override

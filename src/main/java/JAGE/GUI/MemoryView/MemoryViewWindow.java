@@ -1,3 +1,7 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.GUI.MemoryView;
 
 import javafx.event.EventHandler;
@@ -9,12 +13,16 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
-public class MemoryView extends Stage implements EventHandler<WindowEvent> {
-    public static MemoryView.EncodingType encoding = EncodingType.HEX;
+
+/**
+ * Memory View Window to see the current state of the emulator memory
+ */
+public class MemoryViewWindow extends Stage implements EventHandler<WindowEvent> {
+    public static MemoryViewWindow.EncodingType encoding = EncodingType.HEX;
     Scene scene;
 
 
-    public MemoryView() throws IOException {
+    public MemoryViewWindow() throws IOException {
         this.setOnCloseRequest(this);
         Parent debugWindow = FXMLLoader.load(getClass().getClassLoader().getResource("memoryView.fxml"));
 

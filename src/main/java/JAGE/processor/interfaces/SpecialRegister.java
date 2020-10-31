@@ -1,9 +1,16 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor.interfaces;
 
 import JAGE.processor.Memory;
 import JAGE.utils.Utilities;
 
 
+/**
+ * Special register with values based on ram
+ */
 public abstract class SpecialRegister extends Register {
 
     public int RAMADDRESS = 0x0;

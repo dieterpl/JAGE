@@ -1,7 +1,11 @@
-package JAGE.GUI;
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
+package JAGE.GUI.MainView;
 
 import JAGE.GUI.Disassembler.DisassemblerWindow;
-import JAGE.GUI.MemoryView.MemoryView;
+import JAGE.GUI.MemoryView.MemoryViewWindow;
 import JAGE.GUI.SpriteView.SpriteView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainWindowController implements Initializable {
+public class MainViewController implements Initializable {
 
     @FXML
     private MenuBar menuBar;
@@ -28,7 +32,7 @@ public class MainWindowController implements Initializable {
     }
 
     public void openMemoryView(ActionEvent actionEvent) throws IOException {
-        MemoryView dw = new MemoryView();
+        MemoryViewWindow dw = new MemoryViewWindow();
 
     }
 

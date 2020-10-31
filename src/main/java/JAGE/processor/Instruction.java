@@ -1,8 +1,15 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor;
 
 import JAGE.processor.interfaces.Parameter;
 import JAGE.utils.Utilities;
 
+/**
+ * Representation of an single instruction
+ */
 public class Instruction {
     int instructionCycles;
     int instructionLength;

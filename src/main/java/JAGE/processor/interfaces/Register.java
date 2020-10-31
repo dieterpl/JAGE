@@ -1,8 +1,15 @@
+/*
+ * Copyright 2020 P. Dieterich
+ * All rights reserved.
+ */
 package JAGE.processor.interfaces;
 
 import JAGE.processor.Registers.RegisterF;
 import JAGE.utils.Utilities;
 
+/**
+ * Abstract Register that contains the most basic version of a 8-Bit register
+ */
 public abstract class Register implements Parameter {
 
 

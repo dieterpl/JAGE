@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import org.fxmisc.richtext.CodeArea?>
 <AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="500.0" prefWidth="500.0"
-            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="JAGE.GUI.Disassembler.DisassemblerGUIController">
+            xmlns="http://javafx.com/javafx/10.0.1" fx:controller="JAGE.GUI.Disassembler.DisassembleController">
     <children>
         <SplitPane fx:id="pane" dividerPositions="0.6" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
                    minWidth="-Infinity" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0"
