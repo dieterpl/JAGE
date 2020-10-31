@@ -76,24 +76,14 @@ public class Supervisor {
             RegisterPC.getInstance().setValue(Utilities.hexToInt("100"));
             GPU.getInstance();
             int prev = 0;
-
-            //TODO
-            int prev_temp = 0;
-
+            
             while (index > 0) {
                 index--;
                 Instruction in = Interpreter.getInstance().interpret(RegisterPC.getInstance().getValue());
                 String before = in.toString();
                 String address = RegisterPC.getInstance().getValueHex();
                 Executer.getInstance().exec(in);
-                /*
-                if (Memory.getInstance().getRamValue(0xff42) != prev_temp) {
-                    logger.debug("0x" + address + " B:" + before + " A: " + in + "SP: " + RegisterSP.getInstance().getValueHex() + " o_d81dh: " +prev_temp + " n_d81dh: "+Memory.getInstance().getRamValue(0xff42)+"\n");
-                    prev_temp = Memory.getInstance().getRamValue(0xff42);
-                }
-                else
 
-                */
                 logger.debug("0x" + address + " B:" + before + " A: " + in+"SP: "+ RegisterSP.getInstance().getValueHex()+"\n");
                 // SB TEST
                 if (Memory.getInstance().getRamValue(0xFF01) != prev) {
