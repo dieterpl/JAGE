@@ -24,11 +24,11 @@ So far the emulator is able to run the 1. test from the emulator test set found 
 http://gbdev.gg8.se/files/roms/blargg-gb-tests/
 In the issue tab of this github one can find the still missing function for the project.
 
-![main](https://github.com/dieterpl/jage/blob/readme/picture/main.png?raw=true)
+![main](https://github.com/dieterpl/jage/raw/readme/picture/main.png)
 
-![sprite](https://github.com/dieterpl/jage/blob/readme/picture/sprite.png?raw=true)
+![sprite](https://github.com/dieterpl/jage/raw/readme/picture/sprite.png)
 
-![memory](https://github.com/dieterpl/jage/blob/readme/picture/memory.png?raw=true)
+![memory](https://github.com/dieterpl/jage/raw/readme/picture/memory.png)
 ## Documents & Reading
 
 As the Gameboy is a very well researched device a lot of documentation exists some of it is really excellent:
